@@ -1,0 +1,22 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+# Example Data (replace with real data)
+stocks = {
+    "Stock A": np.random.randn(50).cumsum(),
+    "Stock B": np.random.randn(50).cumsum(),
+    "Stock C": np.random.randn(50).cumsum(),
+    "Stock D": np.random.randn(50).cumsum(),
+    "Stock E": np.random.randn(50).cumsum(),
+    "Stock F": np.random.randn(50).cumsum(),
+    "Stock G": np.random.randn(50).cumsum(),
+    "Stock H": np.random.randn(50).cumsum(),
+    "Stock I": np.random.randn(50).cumsum(),
+    "Stock J": np.random.randn(50).cumsum(),
+}
+
+# Display 10 charts
+st.title("Stock Line Charts")
+for stock, prices in stocks.items():
+    st.line_chart(pd.DataFrame(prices, columns=[stock]))
